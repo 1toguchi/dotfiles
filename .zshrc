@@ -1,14 +1,17 @@
 DOTFILE_DIR=$HOME/dotfiles
 
 # theme is written in this file
-source $DOTFILE_DIR/.zshrc.antigen
-
 for f in $DOTFILE_DIR/.zsh/[0-9]*.(sh|zsh)
 do
 	source "$f"
 done
 
+export TERM="xterm-256color"
+source $DOTFILE_DIR/.zshrc.antigen
+source $DOTFILE_DIR/.zsh
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
-
+# tmux_automatically_attach attachs tmux session
+# automatically when your are in zsh
+if [[ -x ~/bin/tmuxx ]]; then
+    ./bin/tmuxx
+fi

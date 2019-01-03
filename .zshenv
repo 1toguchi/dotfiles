@@ -1,3 +1,8 @@
+DOTFILE_DIR=$HOME/dotfiles
+source $DOTFILE_DIR/.zsh/powerlevel9k/powerlevel9k.zsh-theme
+
+export TERM="xterm-256color"
+
 # PATH の設定（お好みで）
 export PATH="/usr/local/bin:$PATH"
 
@@ -7,4 +12,4 @@ path=(
     $path
 )
 
-
+export TERM="xterm-256color"

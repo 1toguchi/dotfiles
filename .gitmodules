@@ -1,0 +1,9 @@
+[submodule ".vim/pack/mypackage/start/vim-dirvish"]
+	path = .vim/pack/mypackage/start/vim-dirvish
+	url = git@github.com:justinmk/vim-dirvish.git
+[submodule ".vim/pack/mypackage/start/fzf"]
+	path = .vim/pack/mypackage/start/fzf
+	url = git@github.com:junegunn/fzf.git
+[submodule ".vim/pack/mypackage/start/omnisharp-vim"]
+	path = .vim/pack/mypackage/start/omnisharp-vim
+	url = git@github.com:OmniSharp/omnisharp-vim.git

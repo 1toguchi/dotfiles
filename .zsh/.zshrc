@@ -1,3 +1,5 @@
+export TERM="xterm-256color" 
+
 DOTFILE_DIR=$HOME/dotfiles
 
 for f in $DOTFILE_DIR/.zsh/[0-9]*.(sh|zsh)

@@ -1,13 +1,12 @@
-DIR=$DORFILE_DIR
+DORFILE_DIR=$HOME/dotfiles
 
 
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias vz='vim $DIR/.zshrc'
-alias sz='source $DIR/.zshrc'
+alias vz='vim $DOTFILE_DIR/.zshrc'
+alias sz='source $DOTFILE_DIR/.zshrc'
 alias ez='exec $SHELL'
-alias vza='vim $DIR/.zsh/10_aliases.zsh'
+alias vza='vim $DOTFILE_DIR/.zsh/10_aliases.zsh'
 alias ls='ls --color=auto -lh'
-alias vzantigen='vim $DIR/.zshrc.antigen'
-
+alias vzantigen='vim $DOTFILE_DIR/.zshrc.antigen'
