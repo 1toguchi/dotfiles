@@ -7,3 +7,6 @@
 [submodule ".vim/pack/mypackage/start/omnisharp-vim"]
 	path = .vim/pack/mypackage/start/omnisharp-vim
 	url = git@github.com:OmniSharp/omnisharp-vim.git
+[submodule ".omnisharp/omnisharp-roslyn"]
+	path = .omnisharp/omnisharp-roslyn
+	url = git@github.com:OmniSharp/omnisharp-roslyn.git
