@@ -7,7 +7,7 @@ do
     source "$f"
 done
 
-source $DOTFILE_DIR/antigen.zsh
+source $DOTFILE_DIR/.zsh/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
