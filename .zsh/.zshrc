@@ -10,3 +10,5 @@ done
 source $DOTFILE_DIR/.zsh/antigen/antigen.zsh
 source $DOTFILE_DIR/.zshrc.antigen
 source $DOTFILE_DIR/.zsh/powerlevel9k/powerlevel9k.zsh-theme
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

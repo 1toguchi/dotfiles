@@ -95,6 +95,7 @@ endif
 
 call plug#begin("/home/yuu/dotfiles/.vim/plugged")
 
+Plug 'junegunn/fzf', { 'dir': '~/dotfiles/.fzf', 'do': './install --all' }
 Plug 'suan/vim-instant-markdown'
 Plug 'junegunn/fzf.vim'
 Plug 'lifepillar/vim-cheat40'
