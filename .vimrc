@@ -1,8 +1,5 @@
-
 inoremap <silent> jj <ESC>
 
-
-"文字コードをUFT-8に設定
 set fenc=utf-8
 " バックアップファイルを作らない
 set nobackup
@@ -77,7 +74,6 @@ set tabstop=2
 " 行頭でのTab文字の表示幅
 set shiftwidth=2
 
-
 "################################################
 "# vim-plugin Do :PlugInstall in vim
 "################################################
@@ -99,7 +95,30 @@ Plug 'junegunn/fzf', { 'dir': '~/dotfiles/.fzf', 'do': './install --all' }
 Plug 'suan/vim-instant-markdown'
 Plug 'junegunn/fzf.vim'
 Plug 'lifepillar/vim-cheat40'
+Plug 'miyakogi/seiya.vim'
+Plug 'itchyny/lightline.vim', {'do': 'cp colors/* ~/dotfiles/.vim/colors/'}
+Plug 'altercation/vim-colors-solarized', {'do': 'cp colors/* ~/dotfiles/.vim/colors/'}
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/powerline-extra-symbols'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
-"################################################
+"###############################################
+"# Appearance
+"###############################################
+
+autocmd ColorScheme * highlight Comment ctermfg=248
+autocmd ColorScheme * highlight LineNr ctermfg=8
+syntax enable
+colorscheme solarized
+set background=dark
+set encoding=UTF-8
+set guifont=DroidSansMono\ Nerd\ Font\ 11
+
+let g:airline_solarized_bg='dark'
+let g:airline_theme = 'murmur'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:seiya_auto_enable=1
