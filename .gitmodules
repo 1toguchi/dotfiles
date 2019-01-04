@@ -10,3 +10,9 @@
 [submodule ".omnisharp/omnisharp-roslyn"]
 	path = .omnisharp/omnisharp-roslyn
 	url = git@github.com:OmniSharp/omnisharp-roslyn.git
+[submodule ".vim/pack/mypackage/start/vim-cheatsheet"]
+	path = .vim/pack/mypackage/start/vim-cheatsheet
+	url = git@github.com:reireias/vim-cheatsheet.git
+[submodule ".vim/.vim/plugged/fzf.vim"]
+	path = .vim/.vim/plugged/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
