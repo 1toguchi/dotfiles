@@ -14,3 +14,6 @@ alias vzantigen='vim $DOTFILE_DIR/.zshrc.antigen'
 
 alias rm='rm -i'
 
+alias gad='git add .'
+alias gcm='git commit -m'
+alias gpom='git push origin master'
