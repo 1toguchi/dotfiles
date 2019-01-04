@@ -1,4 +1,5 @@
 DOTFILE_DIR=$HOME/dotfiles
+VIM_PLUGIN_DIR=$DOTFILE_DIR/.vim/pack/mypackage/start
 
 # theme is written in this file
 for f in $DOTFILE_DIR/.zsh/[0-9]*.(sh|zsh)
@@ -37,3 +38,18 @@ function extract() {
   esac
 }
 alias -s {gz,tgz,zip,lzh,bz2,tbz,Z,tar,arj,xz}=extract
+
+#--------------------------------
+
+function peco-src () {
+  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-src
+bindkey '^g' peco-src
+
+#--------------------------------
