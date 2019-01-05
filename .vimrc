@@ -100,6 +100,7 @@ Plug 'itchyny/lightline.vim', {'do': 'cp colors/* ~/dotfiles/.vim/colors/'}
 Plug 'altercation/vim-colors-solarized', {'do': 'cp colors/* ~/dotfiles/.vim/colors/'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-jp/vimdoc-ja'
 Plug 'ryanoasis/powerline-extra-symbols'
 Plug 'ryanoasis/vim-devicons'
 Plug 'plasticboy/vim-markdown'
