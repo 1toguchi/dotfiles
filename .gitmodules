@@ -22,3 +22,6 @@
 [submodule ".tmux/tmux-powerline"]
 	path = .tmux/tmux-powerline
 	url = https://github.com/erikw/tmux-powerline
+[submodule "/home/yuu/dotfiles/.tmux/plugins/tpm"]
+	path = /home/yuu/dotfiles/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm

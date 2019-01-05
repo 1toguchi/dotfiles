@@ -11,11 +11,6 @@ export TERM="xterm-256color"
 source $DOTFILE_DIR/.zshrc.antigen
 source $DOTFILE_DIR/.zsh
 
-# tmux_automatically_attach attachs tmux session
-# automatically when your are in zsh
-if [[ -x ~/bin/tmuxx ]]; then
-    ./bin/tmuxx
-fi
 
 #################################
 # function
@@ -53,3 +48,5 @@ zle -N peco-src
 bindkey '^g' peco-src
 
 #--------------------------------
+
+tmux set-option prefix C-t
