@@ -102,12 +102,16 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/powerline-extra-symbols'
 Plug 'ryanoasis/vim-devicons'
+Plug 'plasticboy/vim-markdown'
+Plug 'yuratomo/w3m.vim'
 
 call plug#end()
 
 "###############################################
 "# Appearance
 "###############################################
+
+cabbrev ggr W3m google
 
 autocmd ColorScheme * highlight Comment ctermfg=248
 autocmd ColorScheme * highlight LineNr ctermfg=8

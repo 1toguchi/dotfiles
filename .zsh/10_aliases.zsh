@@ -14,8 +14,10 @@ alias st='tmux source-file $DOTFILE_DIR/.tmux.conf'
 alias ls='ls --color=auto -lh'
 alias vzantigen='vim $DOTFILE_DIR/.zshrc.antigen'
 alias tmux='tmux -2'
-
+alias m='cd /home/yuu/Documents/markdown/ && vim memo_`date +%Y%m%d%T`.md'
 alias rm='rm -i'
+
+alias ggr='lynx https://www.google.co.jp/'
 
 alias gad='git add .'
 alias gcm='git commit -m'
