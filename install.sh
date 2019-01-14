@@ -6,4 +6,5 @@ do
     [[ "$f" == ".DS_Store" ]] && continue
 
     echo "$f"
+    ln -s $HOME/dotfiles/$f $HOME/$f
 done
