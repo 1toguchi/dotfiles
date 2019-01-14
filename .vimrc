@@ -109,11 +109,6 @@ Plug 'vim-jp/vimdoc-ja'
 Plug 'ryanoasis/powerline-extra-symbols'
 Plug 'ryanoasis/vim-devicons'
 Plug 'plasticboy/vim-markdown'
-Plug 'yuratomo/w3m.vim'
-
-"C# check-plugin
-Plug 'OrangeT/vim-csharp'
-Plug 'Shougo/deoplete.nvim'
 
 call plug#end()
 
