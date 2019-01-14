@@ -7,6 +7,8 @@ do
 	source "$f"
 done
 
+st
+
 export TERM="xterm-256color"
 source $DOTFILE_DIR/.zshrc.antigen
 source $DOTFILE_DIR/.zsh

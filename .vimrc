@@ -1,5 +1,7 @@
 inoremap <silent> jj <ESC>
 
+set clipboard=unnamedplus
+
 set fenc=utf-8
 " バックアップファイルを作らない
 set nobackup
@@ -94,7 +96,10 @@ call plug#begin("/home/yuu/dotfiles/.vim/plugged")
 Plug 'junegunn/fzf', { 'dir': '~/dotfiles/.fzf', 'do': './install --all' }
 Plug 'suan/vim-instant-markdown'
 Plug 'junegunn/fzf.vim'
+
+"<leader> + ?
 Plug 'lifepillar/vim-cheat40'
+
 Plug 'miyakogi/seiya.vim'
 Plug 'itchyny/lightline.vim', {'do': 'cp colors/* ~/dotfiles/.vim/colors/'}
 Plug 'altercation/vim-colors-solarized', {'do': 'cp colors/* ~/dotfiles/.vim/colors/'}
@@ -106,6 +111,10 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'plasticboy/vim-markdown'
 Plug 'yuratomo/w3m.vim'
 
+"C# check-plugin
+Plug 'OrangeT/vim-csharp'
+Plug 'Shougo/deoplete.nvim'
+
 call plug#end()
 
 "###############################################
@@ -113,6 +122,9 @@ call plug#end()
 "###############################################
 
 cabbrev ggr W3m google
+cabbrev H W3m#back
+cabbrev yyp W3m#CopyUrl
+
 
 autocmd ColorScheme * highlight Comment ctermfg=248
 autocmd ColorScheme * highlight LineNr ctermfg=8
@@ -127,3 +139,6 @@ let g:airline_theme = 'murmur'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:seiya_auto_enable=1
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
