@@ -2,6 +2,7 @@
 # antigen
 ###################################
 
+DOTFILE_DIR=$HOME/dotfiles
 source $DOTFILE_DIR/.zsh/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.

@@ -1,27 +1,12 @@
-[submodule ".vim/pack/mypackage/start/vim-dirvish"]
-	path = .vim/pack/mypackage/start/vim-dirvish
-	url = git@github.com:justinmk/vim-dirvish.git
-[submodule ".vim/pack/mypackage/start/fzf"]
-	path = .vim/pack/mypackage/start/fzf
-	url = git@github.com:junegunn/fzf.git
-[submodule ".vim/pack/mypackage/start/omnisharp-vim"]
-	path = .vim/pack/mypackage/start/omnisharp-vim
-	url = git@github.com:OmniSharp/omnisharp-vim.git
-[submodule ".omnisharp/omnisharp-roslyn"]
-	path = .omnisharp/omnisharp-roslyn
-	url = git@github.com:OmniSharp/omnisharp-roslyn.git
-[submodule ".vim/pack/mypackage/start/vim-cheatsheet"]
-	path = .vim/pack/mypackage/start/vim-cheatsheet
-	url = git@github.com:reireias/vim-cheatsheet.git
 [submodule ".vim/.vim/plugged/fzf.vim"]
 	path = .vim/.vim/plugged/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
 [submodule "fzf"]
-	path = fzf
+	path = .fzf
 	url = https://github.com/junegunn/fzf
 [submodule ".tmux/tmux-powerline"]
 	path = .tmux/tmux-powerline
 	url = https://github.com/erikw/tmux-powerline
-[submodule "/home/yuu/dotfiles/.tmux/plugins/tpm"]
-	path = /home/yuu/dotfiles/.tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm
+[submodule ".tmux/plugins/tpm"]
+	path = .tmux/plugins/tpm
+  url = https://github.com/tmux-plugins/tpm
