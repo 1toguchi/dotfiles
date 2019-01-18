@@ -1,0 +1,3 @@
+pane	1	0	:-	1	:*	1	:/home/yuu	1	zsh	:
+window	1	0	1	:*	b53e,172x23,0,0,1
+state	1	
