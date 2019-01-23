@@ -64,6 +64,5 @@ function google() {
   vim -c "W3m google $str"
 }
 
-
-
 tmux set-option prefix C-t
+[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux source-file "$DOTFILE_DIR/.tmux.conf"

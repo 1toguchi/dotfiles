@@ -76,41 +76,89 @@ set tabstop=2
 " 行頭でのTab文字の表示幅
 set shiftwidth=2
 
+
 "################################################
 "# vim-plugin Do :PlugInstall in vim
 "################################################
-" 設定されたランタイムパスの確認
 set runtimepath+=~/dotfiles/.vim/plugged/vim-plug
 
 if has('vim_starting')
   set rtp+=/home/yuu/dotfiles/.vim/plugged/vim-plug
-  if !isdirectory(expand("/home/yuu/dotfiles/.vim/plugged/vim-plug"))
+  if !isdirectory(expand("~/dotfiles/.vim/plugged/vim-plug"))
     echo 'install vim-plug...'
-    call system("mkdir -p /home/yuu/dotfiles/.vim/plugged/vim-plug")
-    call system("git clone https://github.com/junegunn/vim-plug.git /home/yuu/dotfiles/.vim/plugged/vim-plug/autoload")
+    call system("mkdir -p ~/dotfiles/.vim/plugged/vim-plug")
+    call system("git clone https://github.com/junegunn/vim-plug.git ~/dotfiles/.vim/plugged/vim-plug/autoload")
   end
 endif
 
-call plug#begin("/home/yuu/dotfiles/.vim/plugged")
+call plug#begin("~/dotfiles/.vim/plugged")
 
 Plug 'junegunn/fzf', { 'dir': '~/dotfiles/.fzf', 'do': './install --all' }
-Plug 'suan/vim-instant-markdown'
 Plug 'junegunn/fzf.vim'
 
-"<leader> + ?
+"<leader> + ? = \?
 Plug 'lifepillar/vim-cheat40'
 
 Plug 'miyakogi/seiya.vim'
 Plug 'itchyny/lightline.vim', {'do': 'cp colors/* ~/dotfiles/.vim/colors/'}
 Plug 'altercation/vim-colors-solarized', {'do': 'cp colors/* ~/dotfiles/.vim/colors/'}
+Plug 'vim-syntastic/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'ryanoasis/powerline-extra-symbols'
 Plug 'ryanoasis/vim-devicons'
 Plug 'plasticboy/vim-markdown'
+Plug 'OrangeT/vim-csharp'
+Plug 'thinca/vim-quickrun'
+Plug 'Shougo/neosnippet.vim'
+Plug 'mrtazz/simplenote.vim'
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'OmniSharp/omnisharp-vim', {
+\   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] },
+\   'build': {
+\     'windows' : 'msbuild server/OmniSharp.sln',
+\     'mac': 'xbuild server/OmniSharp.sln',
+\     'unix': 'xbuild server/OmniSharp.sln',
+\   },
+\ }
+let g:OmniSharp_server_use_mono = 1
+"sudo apt-get install libuv1-dev
+
+
+" \r
+let g:quickrun_config = { }
+let g:quickrun_config['cs'] = {
+			\ 'command'  : 'csc',
+			\ 'runmode'  : 'simple',
+			\ 'exec'     : ['%c /nologo %s:gs?/?\\? > /dev/null', '"%S:p:r:gs?/?\\?.exe" %a', ':call delete("%S:p:r.exe")'],
+			\ 'tempfile' : '{tempname()}.cs',
+			\ }
+
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 call plug#end()
+
+
+"###############################################
+"# syntastic settings
+"###############################################
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 "###############################################
 "# Appearance
@@ -119,7 +167,6 @@ call plug#end()
 cabbrev ggr W3m google
 cabbrev H W3m#back
 cabbrev yyp W3m#CopyUrl
-
 
 autocmd ColorScheme * highlight Comment ctermfg=248
 autocmd ColorScheme * highlight LineNr ctermfg=8
@@ -134,6 +181,14 @@ let g:airline_theme = 'murmur'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:seiya_auto_enable=1
+
+
+"###############################################
+"# Simplenote setting
+"###############################################
+source ~/.simplenoterc
+let g:SimplenoteFiletype = "markdown"
+let g:SimplenoteVertical = 1
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
