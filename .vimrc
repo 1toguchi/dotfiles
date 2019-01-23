@@ -110,9 +110,7 @@ Plug 'ryanoasis/powerline-extra-symbols'
 Plug 'ryanoasis/vim-devicons'
 Plug 'plasticboy/vim-markdown'
 Plug 'OrangeT/vim-csharp'
-Plug 'thinca/vim-quickrun'
 Plug 'Shougo/neosnippet.vim'
-Plug 'mrtazz/simplenote.vim'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'OmniSharp/omnisharp-vim', {
 \   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] },
@@ -122,18 +120,27 @@ Plug 'OmniSharp/omnisharp-vim', {
 \     'unix': 'xbuild server/OmniSharp.sln',
 \   },
 \ }
+
 let g:OmniSharp_server_use_mono = 1
 "sudo apt-get install libuv1-dev
 
 
+"###############################################
+" QuickRun
 " \r
+Plug 'thinca/vim-quickrun'
 let g:quickrun_config = { }
-let g:quickrun_config['cs'] = {
-			\ 'command'  : 'csc',
-			\ 'runmode'  : 'simple',
-			\ 'exec'     : ['%c /nologo %s:gs?/?\\? > /dev/null', '"%S:p:r:gs?/?\\?.exe" %a', ':call delete("%S:p:r.exe")'],
-			\ 'tempfile' : '{tempname()}.cs',
-			\ }
+let g:quickrun_config['cs']  = {
+	\ 'command'              : 'csc',
+	\ 'exec'                 : ['%c %o %s:p > /dev/null', 'mono %s:p:r.exe', 'rm %s:p:r.exe'],
+	\ 'cmdopt'               : '-warn:4',
+	\ 'quickfix/errorformat' : '%f\\(%l\\,%c\\):\ error\ CS%n:\ %m',
+  \ 'outputter/buffer/split': '10',
+  \ "outputter/buffer/into" : 1,
+\ }
+
+filetype plugin indent on
+"###############################################
 
 
 if has('nvim')
@@ -144,8 +151,15 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
-call plug#end()
 
+"###############################################
+"# NerdTree
+"###############################################
+
+Plug 'scrooloose/nerdtree'
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+map <C-n> :NERDTreeToggle<CR>
 
 "###############################################
 "# syntastic settings
@@ -159,6 +173,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+call plug#end()
+
 
 "###############################################
 "# Appearance
@@ -186,9 +203,13 @@ let g:seiya_auto_enable=1
 "###############################################
 "# Simplenote setting
 "###############################################
+Plug 'mrtazz/simplenote.vim'
 source ~/.simplenoterc
 let g:SimplenoteFiletype = "markdown"
 let g:SimplenoteVertical = 1
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+
+
+
