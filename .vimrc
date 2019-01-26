@@ -120,6 +120,8 @@ Plug 'OmniSharp/omnisharp-vim', {
 \     'unix': 'xbuild server/OmniSharp.sln',
 \   },
 \ }
+Plug 'tpope/vim-dispatch'
+Plug 'Shougo/vimproc.vim'
 
 let g:OmniSharp_server_use_mono = 1
 "sudo apt-get install libuv1-dev
