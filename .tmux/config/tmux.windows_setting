@@ -1,0 +1,7 @@
+##### 1st Window
+# create ew window
+new-window -n work
+new-window -n vim
+new-window -n markdown
+
+
