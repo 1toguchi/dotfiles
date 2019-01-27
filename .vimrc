@@ -127,6 +127,40 @@ let g:OmniSharp_server_use_mono = 1
 "sudo apt-get install libuv1-dev
 
 Plug 'OmniSharp/omnisharp-roslyn'
+Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/neocomplcache.vim' 
+
+
+autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
+
+let g:neocomplcache_enable_at_startup = 1
+if !exists('g:neocomplcache_force_omni_patterns')
+  let g:neocomplcache_force_omni_patterns = {}
+endif
+let g:neocomplcache_force_omni_patterns.cs = '[^.]\.\%(\u\{2,}\)\?'
+
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+    \ }
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.cs = '[^.]\.\%(\u\{2,}\)\?'
+
+
 
 
 "###############################################
