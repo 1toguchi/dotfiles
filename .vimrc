@@ -126,6 +126,8 @@ Plug 'Shougo/vimproc.vim'
 let g:OmniSharp_server_use_mono = 1
 "sudo apt-get install libuv1-dev
 
+Plug 'OmniSharp/omnisharp-roslyn'
+
 
 "###############################################
 " QuickRun

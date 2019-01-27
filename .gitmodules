@@ -25,3 +25,6 @@
 [submodule ".vim/plugged/vim-dispatch"]
 	path = .vim/plugged/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch
+[submodule ".vim/plugged/omnisharp-roslyn"]
+	path = .vim/plugged/omnisharp-roslyn
+	url = https://github.com/OmniSharp/omnisharp-roslyn
