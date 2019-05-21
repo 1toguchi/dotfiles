@@ -70,3 +70,5 @@ tmux set-option prefix C-t
 tmux  unbind-key C-b && tmux set-option -g prefix C-j && tmux bind-key C-j send-prefix
 #[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux source-file "$DOTFILE_DIR/.tmux.conf"
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

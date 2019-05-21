@@ -165,9 +165,6 @@ let g:seiya_auto_enable=1
 "# Simplenote setting
 "###############################################
 Plug 'mrtazz/simplenote.vim'
-source ~/.simplenoterc
-let g:SimplenoteFiletype = "markdown"
-let g:SimplenoteVertical = 1
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
