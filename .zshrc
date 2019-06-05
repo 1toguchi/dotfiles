@@ -48,6 +48,12 @@ function peco-src () {
 zle -N peco-src
 bindkey '^g' peco-src
 
+
+function atc () {
+  $HOME/.local/bin/atcoder-tools
+}
+
+
 #--------------------------------
 
 function google() {                                                                                                                                                                           
@@ -63,12 +69,6 @@ function google() {
   fi
   vim -c "W3m google $str"
 }
-
-export TMUX_TMPDIR=/tmp
-
-tmux set-option prefix C-t
-tmux  unbind-key C-b && tmux set-option -g prefix C-j && tmux bind-key C-j send-prefix
-#[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux source-file "$DOTFILE_DIR/.tmux.conf"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

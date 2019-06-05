@@ -2,13 +2,29 @@
 
 source ~/dotfiles/.vimrc.keymap
 
+
+"###############################################
+"# Compile
+"###############################################
+
+function! Run()
+  :!rm ./hoge -f
+  :!cd
+  :w
+  :gcc -o % % -lstdc++
+  :!./%
+endfunction
+
+command! Gcc call Run()
+nnoremap <F5> :Gcc<CR><CR>
+
 "################################################
 "# vim-plugin Do :PlugInstall in vim
 "################################################
 set runtimepath+=~/dotfiles/.vim/plugged/vim-plug
 
 if has('vim_starting')
-  set rtp+=/home/yuu/dotfiles/.vim/plugged/vim-plug
+  set rtp+=$HOME/dotfiles/.vim/plugged/vim-plug
   if !isdirectory(expand("~/dotfiles/.vim/plugged/vim-plug"))
     echo 'install vim-plug...'
     call system("mkdir -p ~/dotfiles/.vim/plugged/vim-plug")
@@ -159,12 +175,6 @@ let g:airline_theme = 'murmur'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:seiya_auto_enable=1
-
-
-"###############################################
-"# Simplenote setting
-"###############################################
-Plug 'mrtazz/simplenote.vim'
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
