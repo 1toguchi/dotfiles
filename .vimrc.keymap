@@ -1,4 +1,27 @@
 inoremap <silent> jj <ESC>
+"十字キーをオフにする
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+" 折り返し時に表示行単位での移動できるようにする
+nnoremap j gj
+nnoremap k gk
+
+"入力モードでのカーソル移動
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
+" 日本語入力がオンのままでも使えるコマンド(Enterキーは必要)
+nnoremap あ a
+nnoremap い i
+nnoremap う u
+nnoremap お o
+nnoremap っd dd
+nnoremap っy yy
+
 
 set clipboard=unnamedplus
 
@@ -61,17 +84,12 @@ set showmatch
 set laststatus=2
 " コマンドラインの補完
 set wildmode=list:longest
-" 折り返し時に表示行単位での移動できるようにする
-nnoremap j gj
-nnoremap k gk
-
 
 " Tab系
+set nolist
 " 不可視文字を可視化(タブが「▸-」と表示される)
-set list listchars=tab:\▸\-
 " Tab文字を半角スペースにする
-set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
 set tabstop=2
 " 行頭でのTab文字の表示幅
-set shiftwidth=2
+set shiftwidth=3

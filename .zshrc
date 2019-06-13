@@ -56,19 +56,19 @@ function atc () {
 
 #--------------------------------
 
-function google() {                                                                                                                                                                           
-  local str opt 
-  if [ $# != 0 ]; then
-      str="$@"
-      #for i in $*; do
-      #str="$str+$i"
-      #done
-      #str=`echo $str | sed 's/^\+//'`
-      #opt='search?num=50&hl=ja&lr=lang_ja'
-      #opt="${opt}&q=${str}"
-  fi
-  vim -c "W3m google $str"
-}
+#function google() {                                                                                                                                                                           
+#  local str opt 
+#  if [ $# != 0 ]; then
+#      str="$@"
+#      for i in $*; do
+#      str="$str+$i"
+#      done
+#      str=`echo $str | sed 's/^\+//'`
+#      opt='search?num=50&hl=ja&lr=lang_ja'
+#      opt="${opt}&q=${str}"
+#  fi
+#  vim -c "W3m google $str"
+#}
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
