@@ -10,4 +10,8 @@ do
     ln -s $HOME/dotfiles/$f $HOME/$f
 done
 
+" idea vim rc
+touch $HOME/.ideavimrc
+echo "source $HOME/dotfiles/.vimrc.keymap" >> $HOME/.ideavimrc
+
 source $HOME/dotfiles/.zshrc
