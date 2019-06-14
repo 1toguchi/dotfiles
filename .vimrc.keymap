@@ -1,4 +1,5 @@
 inoremap <silent> jj <ESC>
+inoremap <C-[> <ESC>
 "十字キーをオフにする
 noremap <Up> <Nop>
 noremap <Down> <Nop>

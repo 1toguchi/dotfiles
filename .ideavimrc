@@ -1,1 +1,4 @@
-/home/yuu/dotfiles/.vimrc.keymap
+imap jj <Esc>
+set timeoutlen=1000
+
+source $HOME/dotfiles/.vimrc.keymap
