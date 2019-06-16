@@ -8,15 +8,18 @@ source ~/dotfiles/.vimrc.keymap
 "###############################################
 
 function! Run()
-  :!rm ./hoge -f
-  :!cd
-  :w
-  :gcc -o % % -lstdc++
-  :!./%
+	 :!gcc -o main main.cpp -lstd++
+	 :!atcoder-tools test
 endfunction
 
-command! Gcc call Run()
-nnoremap <F5> :Gcc<CR><CR>
+command! Test call Run()
+
+function! SubmitToAtcoder()
+	 :!gcc -o main main.cpp -lstd++
+	 :!atcoder-tools submit
+endfunction
+
+command! Submit call SubmitToAtcoder()
 
 "################################################
 "# vim-plugin Do :PlugInstall in vim

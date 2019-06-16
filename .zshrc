@@ -10,7 +10,7 @@ done
 st
 
 export TERM="xterm-256color"
-echo PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/.local/bin/
 source $DOTFILE_DIR/.zshrc.antigen
 source $DOTFILE_DIR/.zsh
 
