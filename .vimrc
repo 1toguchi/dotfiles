@@ -8,14 +8,14 @@ source ~/dotfiles/.vimrc.keymap
 "###############################################
 
 function! Run()
-	 :!gcc -o main main.cpp -lstd++
+	 :!gcc -o main main.cpp -lstdc++
 	 :!atcoder-tools test
 endfunction
 
 command! Test call Run()
 
 function! SubmitToAtcoder()
-	 :!gcc -o main main.cpp -lstd++
+	 :!gcc -o main main.cpp -lstdc++
 	 :!atcoder-tools submit
 endfunction
 
