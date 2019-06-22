@@ -1,3 +1,3 @@
 echo '```' 
-echo '`tmux show-buffer`'
+echo `tmux show-buffer`
 echo '```'
