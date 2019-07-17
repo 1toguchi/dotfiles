@@ -2,20 +2,22 @@
 
 source ~/dotfiles/.vimrc.keymap
 
+set wildmenu
+set wildmode=full
 
 "###############################################
 "# Compile
 "###############################################
 
 function! Run()
-	 :!gcc -o main main.cpp -lstd++
+	 :!gcc -o main main.cpp -lstdc++
 	 :!atcoder-tools test
 endfunction
 
 command! Test call Run()
 
 function! SubmitToAtcoder()
-	 :!gcc -o main main.cpp -lstd++
+	 :!gcc -o main main.cpp -lstdc++
 	 :!atcoder-tools submit
 endfunction
 
@@ -67,6 +69,7 @@ Plug 'OmniSharp/omnisharp-vim', {
 Plug 'tpope/vim-dispatch'
 Plug 'Shougo/vimproc.vim'
 
+"Then :OmnisharpInstall
 let g:OmniSharp_server_use_mono = 1
 "sudo apt-get install libuv1-dev
 
@@ -102,8 +105,11 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
 endif
 let g:neocomplete#sources#omni#input_patterns.cs = '[^.]\.\%(\u\{2,}\)\?'
 
-
-
+"###############################################
+" Simplenote 
+"###############################################
+Plug 'mrtazz/simplenote.vim'
+source ~/.simplenoterc
 
 "###############################################
 " QuickRun

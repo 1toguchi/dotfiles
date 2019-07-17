@@ -1,0 +1,1 @@
+echo '$(tmux show-buffer)'
