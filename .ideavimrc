@@ -51,3 +51,4 @@ nnoremap <Space>b :<C-u>action ToggleLineBreakpoint<CR>
 
 set surround
 set timeoutlen=500
+source /Users/gftd501/dotfiles/.vimrc.keymap

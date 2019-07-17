@@ -1,6 +1,8 @@
 DOTFILE_DIR=$HOME/dotfiles
 VIM_PLUGIN_DIR=$DOTFILE_DIR/.vim/pack/mypackage/start
 
+
+
 # theme is written in this file
 for f in $DOTFILE_DIR/.zsh/[0-9]*.(sh|zsh)
 do
