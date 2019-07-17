@@ -14,6 +14,8 @@ export PATH=$PATH:$HOME/.local/bin/
 source $DOTFILE_DIR/.zshrc.antigen
 source $DOTFILE_DIR/.zsh
 
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
 #################################
 # function
 #################################
