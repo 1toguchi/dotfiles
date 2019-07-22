@@ -5,9 +5,29 @@ source ~/dotfiles/.vimrc.keymap
 set wildmenu
 set wildmode=full
 
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
+
 "###############################################
 "# Compile
 "###############################################
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	else
+		   Plug 'Shougo/deoplete.nvim'
+			   Plug 'roxma/nvim-yarp'
+				   Plug 'roxma/vim-hug-neovim-rpc'
+				endif
+				let g:deoplete#enable_at_startup = 1
+
+				Plug 'Shougo/neosnippet.vim'
+				Plug 'Shougo/neosnippet-snippets'
 
 function! Run()
 	 :!gcc -o main main.cpp -lstdc++
@@ -57,15 +77,16 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'plasticboy/vim-markdown'
 Plug 'OrangeT/vim-csharp'
 Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'OmniSharp/omnisharp-vim', {
 \   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] },
 \   'build': {
 \     'windows' : 'msbuild server/OmniSharp.sln',
 \     'mac': 'xbuild server/OmniSharp.sln',
-\     'unix': 'xbuild server/OmniSharp.sln',
-\   },
-\ }
+\     'unix': 'xbuild server/OmniSharp.sln'
+}}
+
 Plug 'tpope/vim-dispatch'
 Plug 'Shougo/vimproc.vim'
 
@@ -135,6 +156,26 @@ else
   Plug 'Shougo/deoplete.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
 endif
 
 

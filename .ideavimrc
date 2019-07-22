@@ -1,4 +1,12 @@
 imap jj <Esc>
-set timeoutlen=1000
+let mapleader = "¥"
 
 source $HOME/dotfiles/.vimrc.keymap
+
+"noremap <C-n> :action EditorDown<CR>  
+"noremap <C-p>n :action EditorUp<CR>  
+
+"nnoremap <leader>8 :action ToggleBreakpointEnabled<CR>
+nmap <C-8> :action ToggleLineBreakPoint<CR>
+set timeoutlen=500
+
