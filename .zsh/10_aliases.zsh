@@ -16,7 +16,7 @@ alias ez='exec $SHELL'
 alias st='tmux source-file $DOTFILE_DIR/.tmux.conf'
 alias sz='source $DOTFILE_DIR/.zshrc'
 #-----------------------------------------------------
-alias ls='ls --color=auto -lh'
+#alias ls='ls --color=auto -lh'
 alias vzantigen='vim $DOTFILE_DIR/.zshrc.antigen'
 #alias tmux='tmux unbind-key C-b && tmux set-option -g prefix C-j && tmux bind-key C-j send-prefix && tmux -a'
 alias rm='rm -i'
