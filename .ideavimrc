@@ -1,8 +1,7 @@
 imap jj <Esc>
+imap っj <Esc>
 
 source $HOME/dotfiles/.vimrc.keymap
-
-imap jj <Esc>
 let mapleader = "¥"
 
 nnoremap / :<C-u>action Find<CR>
@@ -51,4 +50,4 @@ nnoremap <Space>b :<C-u>action ToggleLineBreakpoint<CR>
 
 set surround
 set timeoutlen=500
-source /Users/gftd501/dotfiles/.vimrc.keymap
+source $HOME/dotfiles/.vimrc.keymap
