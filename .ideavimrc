@@ -6,6 +6,8 @@ set surround
 " clipboardをシステムに渡す
 set clipboard=unnamed,unnamedplus
 
+"noremap <C-n> :action EditorDown<CR>  
+"noremap <C-p> :action EditorUp<CR>  
 
 source $HOME/dotfiles/.vimrc.keymap
 
