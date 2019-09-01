@@ -1,8 +1,16 @@
 imap jj <Esc>
 imap っj <Esc>
 
+set surround
+
+" clipboardをシステムに渡す
+set clipboard=unnamed,unnamedplus
+
+
 source $HOME/dotfiles/.vimrc.keymap
-let mapleader = "¥"
+
+
+let mapleader = "\<Space>"
 
 nnoremap / :<C-u>action Find<CR>
 nnoremap <C-o> :<C-u>action Back<CR>
@@ -25,6 +33,7 @@ nnoremap ]<Space> o<Esc>k
 nnoremap g; :<C-u>action JumpToLastChange<CR>
 nnoremap g, :<C-u>action JumpToNextChange<CR>
 
+
 nnoremap <Space>a :<C-u>action GotoAction<CR>
 nnoremap <Space>G :<C-u>action Generate<CR>
 nnoremap <Space>gn :<C-u>action NewClass<CR>
@@ -39,14 +48,24 @@ nnoremap <Space>= :<C-u>action ReformatCode<CR>
 nnoremap <Space>o :<C-u>action FileStructurePopup<CR>
 nnoremap <Space>q :<C-u>action CloseContent<CR>
 nnoremap <Space>Q :<C-u>action ReopenClosedTab<CR>
-nnoremap <Space>e :<C-u>action SearchEverywhere<CR>
 nnoremap <Space>f :<C-u>action GotoFile<CR>
 nnoremap <Space>F :<C-u>action FindInPath<CR>
 nnoremap <Space>s :<C-u>action GotoClass<CR>
 nnoremap <Space>S :<C-u>action GotoSymbol<CR>
 nnoremap <Space>t :<C-u>action ActivateTerminalToolWindow<CR>
 nnoremap <Space>P :<C-u>action ManageRecentProjects<CR>
+
+
+" Debug 関連 
 nnoremap <Space>b :<C-u>action ToggleLineBreakpoint<CR>
+nnoremap <Space>d :<C-u>action Debug<CR>
+nnoremap <Space>e :<C-u>action EvaluateExpression<CR>
+nnoremap <Space>i :<C-u>action StepInto<CR>
+nnoremap <Space>o :<C-u>action StepOut<CR>
+nnoremap <Space>v :<C-u>action StepOver<CR>
+nnoremap <Space>D :<C-u>action Stop<CR>
+nnoremap <Space>r :<C-u>action Run<CR>
+
 
 set surround
 set timeoutlen=500
