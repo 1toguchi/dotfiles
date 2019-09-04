@@ -1,22 +1,20 @@
 DOTFILE_DIR=$HOME/dotfiles
 VIM_PLUGIN_DIR=$DOTFILE_DIR/.vim/pack/mypackage/start
 
-
-
 # theme is written in this file
-for f in $DOTFILE_DIR/.zsh/[0-9]*.(sh|zsh)
-do
-	source "$f"
-done
+#for f in $DOTFILE_DIR/.zsh/[0-9]*.(sh|zsh)
+#do
+#	source "$f"
+#done
 
-st
 
-export TERM="xterm-256color"
-export PATH=$PATH:$HOME/.local/bin/
 source $DOTFILE_DIR/.zshrc.antigen
+source $DOTFILE_DIR/.zsh/10_aliases.zsh
 source $DOTFILE_DIR/.zsh
-
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH=$PATH:$HOME/.local/bin/
+export PATH=$PATH:$HOME/Desktop/nand2tetris/tools
+
 
 #################################
 # function

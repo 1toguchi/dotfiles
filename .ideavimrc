@@ -1,15 +1,21 @@
+source $HOME/dotfiles/.vimrc.keymap
+
 imap jj <Esc>
-imap っj <Esc>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+imap <C-j> <Down>
+imap <C-k> <Up>
+inoremap <C-n> <Down>
+inoremap <C-p> <Up>
+imap <C-h> <Left>
+imap <C-l> <Right>
 
 set surround
 
 " clipboardをシステムに渡す
 set clipboard=unnamed,unnamedplus
-
-"noremap <C-n> :action EditorDown<CR>  
-"noremap <C-p> :action EditorUp<CR>  
-
-source $HOME/dotfiles/.vimrc.keymap
 
 
 let mapleader = "\<Space>"
@@ -55,8 +61,7 @@ nnoremap <Space>F :<C-u>action FindInPath<CR>
 nnoremap <Space>s :<C-u>action GotoClass<CR>
 nnoremap <Space>S :<C-u>action GotoSymbol<CR>
 nnoremap <Space>t :<C-u>action ActivateTerminalToolWindow<CR>
-nnoremap <Space>P :<C-u>action ManageRecentProjects<CR>
-
+nnoremap <Space>; A;<ESC>
 
 " Debug 関連 
 nnoremap <Space>b :<C-u>action ToggleLineBreakpoint<CR>
@@ -67,8 +72,15 @@ nnoremap <Space>o :<C-u>action StepOut<CR>
 nnoremap <Space>v :<C-u>action StepOver<CR>
 nnoremap <Space>D :<C-u>action Stop<CR>
 nnoremap <Space>r :<C-u>action Run<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gs :action GotoSuperMethod<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gb :action JumpToLastChange<CR>
 
+nnoremap U :action FindUsages<CR>
+nnoremap R :action RenameElement<CR>
+
+nnoremap <C-CR> :action ShowIntentionActions<CR>
 
 set surround
-set timeoutlen=500
-source $HOME/dotfiles/.vimrc.keymap
+set timeoutlen=800

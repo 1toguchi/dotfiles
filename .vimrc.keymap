@@ -1,3 +1,11 @@
+let mapleader = "\<Space>"
+
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
+
+nmap <C-;> A;<ESC>
 inoremap <silent> jj <ESC>
 inoremap <C-[> <ESC>
 "十字キーをオフにする
@@ -14,6 +22,13 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
+
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
 
 " 日本語入力がオンのままでも使えるコマンド(Enterキーは必要)
 nnoremap あ a
@@ -94,3 +109,15 @@ set nolist
 set tabstop=2
 " 行頭でのTab文字の表示幅
 set shiftwidth=3
+
+"<Space>pと<Space>yでシステムのクリップボードにコピー＆ペーストする
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+"<Space>wを押してファイルを保存する（:w<Enter>よりずっと速い）
+nnoremap <Leader>w :w<CR>
+

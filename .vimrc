@@ -3,70 +3,25 @@ source ~/dotfiles/.vimrc.keymap
 set wildmenu
 set wildmode=full
 
-cnoremap <C-p> <Up>
-cnoremap <C-n> <Down>
-
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
-nnoremap <silent> [B :bfirst<CR>
-nnoremap <silent> ]B :blast<CR>
-
-"###############################################
-"# Compile
-"###############################################
-
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-	else
-		   Plug 'Shougo/deoplete.nvim'
-			   Plug 'roxma/nvim-yarp'
-				   Plug 'roxma/vim-hug-neovim-rpc'
-				endif
-				let g:deoplete#enable_at_startup = 1
-
-				Plug 'Shougo/neosnippet.vim'
-				Plug 'Shougo/neosnippet-snippets'
-
-function! Run()
-	 :!gcc -o main main.cpp -lstdc++
-	 :!atcoder-tools test
-endfunction
-
-command! Test call Run()
-
-function! SubmitToAtcoder()
-	 :!gcc -o main main.cpp -lstdc++
-	 :!atcoder-tools submit
-endfunction
-
-command! Submit call SubmitToAtcoder()
-
-
-"###############################################
-" Dash.app連携
-"###############################################
-
-function! s:dash(...)
-    if len(a:000) == 1 && len(a:1) == 0
-        echomsg 'No keyword'
-    else
-        let ft = &filetype
-        if &filetype == 'python'
-            let ft = ft.'2'
-        endif
-        let ft = ft.':'
-        let word = len(a:000) == 0 ? input('Keyword: ', ft.expand('<cword>')) : ft.join(a:000, ' ')
-        call system(printf("open dash://'%s'", word))
-    endif
-endfunction
-
-command! -nargs=* Dash call <SID>dash(<f-args>)
-nnoremap <Leader>d :call <SID>dash(expand('<cword>'))<CR>
 
 "################################################
 "# vim-plugin Do :PlugInstall in vim
 "################################################
 set runtimepath+=~/dotfiles/.vim/plugged/vim-plug
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+
+let g:deoplete#enable_at_startup = 1
+
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 
 if has('vim_starting')
   set rtp+=$HOME/dotfiles/.vim/plugged/vim-plug
@@ -99,13 +54,13 @@ Plug 'OrangeT/vim-csharp'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'OmniSharp/omnisharp-vim'
-Plug 'OmniSharp/omnisharp-vim', {
-\   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] },
-\   'build': {
-\     'windows' : 'msbuild server/OmniSharp.sln',
-\     'mac': 'xbuild server/OmniSharp.sln',
-\     'unix': 'xbuild server/OmniSharp.sln'
-}}
+"Plug 'OmniSharp/omnisharp-vim', {
+"\   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] },
+"\   'build': {
+"\     'mac': 'xbuild server/OmniSharp.sln',
+"\     'unix': 'xbuild server/OmniSharp.sln'
+"}
+"}
 
 Plug 'tpope/vim-dispatch'
 Plug 'Shougo/vimproc.vim'
@@ -150,7 +105,7 @@ let g:neocomplete#sources#omni#input_patterns.cs = '[^.]\.\%(\u\{2,}\)\?'
 " Simplenote 
 "###############################################
 Plug 'mrtazz/simplenote.vim'
-source ~/.simplenoterc
+"source ~/.simplenoterc
 
 "###############################################
 " QuickRun
@@ -203,6 +158,8 @@ if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
 
+let g:neosnippet#snippets_directory='~/dotfiles/.vim/snippets'
+
 
 "###############################################
 "# NerdTree
@@ -218,7 +175,7 @@ map <C-n> :NERDTreeToggle<CR>
 "###############################################
 
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
@@ -233,17 +190,13 @@ call plug#end()
 "# Appearance
 "###############################################
 
-cabbrev ggr W3m google
-cabbrev H W3m#back
-cabbrev yyp W3m#CopyUrl
-
 autocmd ColorScheme * highlight Comment ctermfg=248
 autocmd ColorScheme * highlight LineNr ctermfg=8
 syntax enable
 colorscheme solarized
 set background=dark
 set encoding=UTF-8
-set guifont=DroidSansMono\ Nerd\ Font\ 11
+"set guifont=DroidSansMono\ Nerd\ Font\ 11
 
 let g:airline_solarized_bg='dark'
 let g:airline_theme = 'murmur'

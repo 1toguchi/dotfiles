@@ -24,7 +24,7 @@ antigen bundle b4b4r07/enhancd
 # Load the theme.
 antigen theme bhilburn/powerlevel9k powerlevel9k
 ZSH_THEME="powerlevel9k/powerlevel9k"
-
+POWERLEVEL9K_MODE="nerdfont-complete"
 # Customise the Powerlevel9k prompts
 
 

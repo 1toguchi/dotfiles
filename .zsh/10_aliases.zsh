@@ -8,6 +8,7 @@ alias ....='cd ../../..'
 alias ez='exec $SHELL'
 alias vz='vim $DOTFILE_DIR/.zshrc'
 alias vv='vim $DOTFILE_DIR/.vimrc'
+alias viv='vim $DOTFILE_DIR/.ideavimrc'
 alias vza='vim $DOTFILE_DIR/.zsh/10_aliases.zsh'
 alias vt='vim $DOTFILE_DIR/.tmux.conf'
 #-----------------------------------------------------
