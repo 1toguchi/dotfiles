@@ -17,6 +17,14 @@ set surround
 " clipboardをシステムに渡す
 set clipboard=unnamed,unnamedplus
 
+nnoremap yy "+yy
+vnoremap y "+y
+
+nnoremap p "+p
+vnoremap p "+p
+nnoremap P "+P
+vnoremap P "+P
+
 
 let mapleader = "\<Space>"
 
@@ -25,6 +33,16 @@ nnoremap <C-o> :<C-u>action Back<CR>
 nnoremap <C-i> :<C-u>action Forward<CR>
 nnoremap <C-S-o> <C-o>
 nnoremap <C-S-i> <C-i>
+
+
+" code completion not work
+"nnoremap <S-Space> <ESC>:<C-u>action CodeCompletion<CR>
+"inoremap <S-Space> <ESC>:<C-u>action CodeCompletion<CR>
+"inoremap <S- > <ESC>:<C-u>CodeCompletion<CR>
+
+imap <C-n> <ESC>:action HippieCompletion<CR>a
+imap <C-p> <ESC>:action HippieBackwardCompletion<CR>a
+
 
 nnoremap [m :<C-u>action MethodUp<CR>
 nnoremap ]m :<C-u>action MethodDown<CR>
