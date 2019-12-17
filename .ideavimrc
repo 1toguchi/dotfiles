@@ -93,8 +93,10 @@ nnoremap <Space>r :<C-u>action Run<CR>
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap gs :action GotoSuperMethod<CR>
 nnoremap gi :action GotoImplementation<CR>
-nnoremap gb :action JumpToLastChange<CR>
-
+nnoremap g; :<C-u>action JumpToLastChange<CR>
+nnoremap g, :<C-u>action JumpToNextChange<CR>
+nnoremap gn :action GotoNextError<CR>
+nnoremap gp :action GotoPreviousError<CR>
 nnoremap U :action FindUsages<CR>
 nnoremap R :action RenameElement<CR>
 
