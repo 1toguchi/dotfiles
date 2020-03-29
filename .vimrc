@@ -3,6 +3,7 @@ source ~/dotfiles/.vimrc.keymap
 set wildmenu
 set wildmode=full
 
+set helplang=ja,en
 
 "################################################
 "# vim-plugin Do :PlugInstall in vim
