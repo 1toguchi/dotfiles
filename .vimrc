@@ -1,5 +1,6 @@
 "read Vim Keymap 
-source ~/dotfiles/.vimrc.keymap 
+DOT_FILES=$HOME/dotfiles
+source $DOT_FILES/.vimrc.keymap 
 set wildmenu
 set wildmode=full
 
@@ -7,11 +8,11 @@ set wildmode=full
 
 "To run vim-plug :PlugInstall
 
-set runtimepath+=$HOME/dotfiles/.vim/plugged/vim-plug
+set runtimepath+=$DOT_FILES/.vim/plugged/vim-plug
 
 if has('vim_starting')
-  set rtp+=$HOME/dotfiles/.vim/plugged/vim-plug
-  if !isdirectory(expand("~/dotfiles/.vim/plugged/vim-plug"))
+  set rtp+=$DOT_FILES/.vim/plugged/vim-plug
+  if !isdirectory(expand("$DOT_FILES/.vim/plugged/vim-plug"))
     echo 'install vim-plug...'
     call system("mkdir -p ~/dotfiles/.vim/plugged/vim-plug")
     call system("git clone https://github.com/junegunn/vim-plug.git ~/dotfiles/.vim/plugged/vim-plug/autoload")
@@ -80,15 +81,15 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+Plug 'micha/vim-colors-solarized'
 
-call plug#end()
 
 "###############################################
 "# Appearance
 "###############################################
 
 autocmd ColorScheme * highlight Comment ctermfg=248
-autocmd ColorScheme * highlight LineNr ctermfg=8
+"autocmd ColorScheme * highlight LineNr ctermfg=8
 syntax enable
 colorscheme solarized
 set background=dark
@@ -103,4 +104,5 @@ let g:seiya_auto_enable=1
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+call plug#end()
 

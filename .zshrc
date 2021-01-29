@@ -1,5 +1,5 @@
 DOTFILE_DIR=$HOME/dotfiles
-VIM_PLUGIN_DIR=$DOTFILE_DIR/.vim/pack/plugged
+VIM_PLUGIN_DIR=$DOTFILE_DIR/.vim/plugged
 
 
 # 環境変数
@@ -54,6 +54,9 @@ RPROMPT='${vcs_info_msg_0_}'
 # alias
 alias vv=$'vim $DOTFILE_DIR/.vimrc'
 alias vz=$'vim $DOTFILE_DIR/.zshrc'
+alias sz=$'source $DOTFILE_DIR/.zshrc'
+alias sv=$'source $DOTFILE_DIR/.vimrc'
+alias st=$'source $DOTFILE_DIR/.tmux.conf'
 alias ls='ls -aF'
 alias ll='ls -l'
 alias la='ls -al'
@@ -65,6 +68,17 @@ alias cat='cat -n'
 alias less='less -NM'
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
+
+# tmux aliases
+
+#attaches tmux to the last session; creates a new session if none exists.
+alias t='tmux attach || tmux new-session'
+
+alias ta='tmux attach -t' #attaches tmux to a session (example: ta portal)
+
+alias tn='tmux new-session' # Creates a new session
+
+alias tl='tmux list-sessions' # Lists all ongoing sessions
 
 # theme is written in this file
 #for f in $DOTFILE_DIR/.zsh/[0-9]*.(sh|zsh)
