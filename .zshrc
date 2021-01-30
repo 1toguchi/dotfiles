@@ -1,5 +1,9 @@
-DOTFILE_DIR=$HOME/dotfiles
-VIM_PLUGIN_DIR=$DOTFILE_DIR/.vim/plugged
+for DOTFILE in `find $HOME/dotfiles/system`
+do
+  [ -f $DOTFILE ] && source $DOTFILE
+done
+
+VIM_PLUGIN_DIR=$DOTFILES_DIR/.vim/plugged
 
 
 # 環境変数
@@ -52,22 +56,6 @@ PROMPT='%T %~ %F{magenta}$%f '
 RPROMPT='${vcs_info_msg_0_}'
 
 # alias
-alias vv=$'vim $DOTFILE_DIR/.vimrc'
-alias vz=$'vim $DOTFILE_DIR/.zshrc'
-alias sz=$'source $DOTFILE_DIR/.zshrc'
-alias sv=$'source $DOTFILE_DIR/.vimrc'
-alias st=$'source $DOTFILE_DIR/.tmux.conf'
-alias ls='ls -aF'
-alias ll='ls -l'
-alias la='ls -al'
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-alias vi='vim'
-alias cat='cat -n'
-alias less='less -NM'
-export CLICOLOR=1
-export LSCOLORS=DxGxcxdxCxegedabagacad
 
 # tmux aliases
 

@@ -67,6 +67,7 @@ let g:neosnippet#snippets_directory='~/dotfiles/.vim/snippets'
 Plug 'scrooloose/nerdtree'
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+let NERDTreeShowHidden=1
 map <C-n> :NERDTreeToggle<CR>
 
 "###############################################
